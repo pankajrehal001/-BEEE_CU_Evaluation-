@@ -1,0 +1,32 @@
+int serialValue=0;
+void setup()
+{
+Serial.begin(3500);
+pinMode(13,OUTPUT);
+pinMode(8,OUTPUT);
+}
+	void loop()
+{
+static int button count=0;
+sensorValue=analogRead(A0);
+if(digitalRead(0)==HIGH)
+button_count+=1;
+if (sensorValue<300)
+{
+if(button_count%2!=0)
+{
+digitalWrite(13,HIGH);
+delay(500);
+digitalWrite(13,LOW);
+delay(500);
+else if(button_count%2==0)
+{
+digitalWrite(13,HIGH);
+delay(500);
+digitalWrite(13,LOW);
+delay(500);
+}
+}
+else digitalWrite(13,LOW);
+}
+
